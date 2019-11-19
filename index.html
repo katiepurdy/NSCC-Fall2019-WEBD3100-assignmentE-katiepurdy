@@ -6,10 +6,77 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Contact</title>
     <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="https://use.typekit.net/rlb8vrq.css">
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
     <main>
+      <section class="container contact">
+        <form action="/" autocomplete="on">
+          <h1>Let's collaborate!</h1>
+          <fieldset>
+            <legend>Personal info</legend>
+            <div class="field">
+                <label for="firstName">What is your first name?*</label><br>
+                <div class="control">
+                  <input type="text" id="firstName" name="firstName" placeholder="e.g. Jane" autocomplete="given-name">
+                </div>
+            </div>
+            <div class="field">
+              <label for="lastName">What is your last name?</label><br>
+              <div class="control">
+                <input type="text" id="lastName" name="lastName" placeholder="e.g. Doe" autocomplete="family-name">
+              </div>
+            </div>
+            <div class="field">
+              <label for="phoneNumber">What is your phone number?</label><br>
+              <div class="control">
+                <input type="text" id="phoneNumber" name="phoneNumber" placeholder="e.g. 999-999-0000" autocomplete="tel-national">
+              </div>
+            </div>
+            <div class="field">
+              <label for="email">What is your email address?*</label><br>
+              <div class="control">
+                <input type="text" id="email" name="email" placeholder="e.g. jane.doe@example.com" autocomplete="email">
+              </div>
+              
+            </div>
+          </fieldset>
+              
+          <fieldset>
+            <legend>Project info</legend>
+            <div class="field">
+              <label>Primary language*</label>
+              <div class="control-radio">
+                <input type="radio" id="javascript" name="primaryLanguage">
+                <label for="javascript">JavaScript</label>
+                <input type="radio" id="other" name="primaryLanguage">
+                <label for="other">Other</label>
+              </div>
+            </div>
+            <div class="field">
+              <label for="services">Which services do you need?</label>
+              <div class="control">
+                <select name="services" id="services">
+                  <option value="design">Design</option>
+                  <option value="development">Development</option>
+                  <option value="design-and-development" selected>Design & Development</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+            </div>
+            <div class="field">
+              <label for="details">What is your project all about?</label><br>
+              <div class="control">
+                <textarea name="details" id="details" placeholder="e.g. Hi! I'm looking for..."></textarea>
+              </div>
+            </div>
+          </fieldset>
+
+          <input type="submit" value="Submit" />
+        </form>
+        <img src="images/undraw-girl.png" class="undraw-girl" alt="">
+      </section>
 
     </main>
   </body>

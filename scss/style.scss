@@ -1,0 +1,130 @@
+$color-primary: #D4838F;
+$color-secondary: #2F2E41;
+$color-tertiary: #F2F2F2;
+$white: #ffffff;
+$background-color-primary: $color-primary;
+$background-color-secondary: $white;
+$text-color-headings: $color-secondary;
+$border-radius: 8px;
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: acumin-pro,sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    padding: 96px 96px 0;
+    background-color: $background-color-primary;
+    //background: url('../images/mock.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    margin: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: $text-color-headings;
+    letter-spacing: 1px;
+    font-weight: 700;
+    font-style: normal;
+    margin: 0;
+}
+
+h1 {
+    font-size: 56px;
+    margin-bottom: 22px;
+}
+
+form {
+    flex: 0;
+    min-width: 690px;
+    flex-wrap: wrap;
+}
+
+fieldset {
+    border: 1px solid rgba(47, 46, 65, 0.2);
+    padding: 8px 20px;
+}
+
+legend {
+    padding: 2px 6px;
+    font-size: 20px;
+    font-weight: 700;
+    color: rgba(47, 46, 65, 0.85);
+}
+
+label {
+    font-size: 20px;
+}
+
+input,
+textarea {
+    padding: 8px 16px;
+    font-size: 20px;
+    margin: 16px 0;
+    border: none;
+    outline: none;
+    border-radius: $border-radius;
+    background-color: $color-tertiary;
+    color: rgba(47, 46, 65, 0.75);
+}
+
+input,
+input:not(input[type=radio]),
+textarea {
+    width: 100%;
+}
+
+input[type=text]:focus,
+textarea:focus {
+    box-shadow: 0 0 0 2px $color-primary;
+}
+
+fieldset {
+    border-radius: $border-radius;
+}
+
+.field {
+    
+}
+
+.control-radio {
+    background-color: $color-tertiary;
+    border-radius: $border-radius;
+}
+
+input[type=radio] {
+    margin-left: 4px;
+}
+
+.container.contact {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    background-color: $background-color-secondary;
+    padding: 44px 88px;
+    opacity: 1;
+    border-radius: $border-radius;
+}
+
+input[type=submit] {
+    background-color: $color-primary;
+    font-size: 20px;
+    font-weight: 700;
+    border: none;
+    color: white;
+    padding: 8px 64px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: $border-radius;
+    margin-bottom: 0;
+}
+
+.undraw-girl {
+    width: 400px;
+    height: 100%;
+    display: inline-block;
+}
