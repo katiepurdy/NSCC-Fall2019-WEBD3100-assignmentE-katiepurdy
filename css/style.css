@@ -29,14 +29,21 @@ main {
 .container {
   max-width: 1600px; }
 
+a,
+input[type="submit"] {
+  transition: background-color 0.3s ease; }
+
 header h1 > a {
-  text-decoration: none; }
+  text-decoration: none;
+  color: #2f2e41; }
+  header h1 > a:hover {
+    text-decoration: underline;
+    cursor: pointer; }
 
 nav {
   display: flex;
   justify-content: center;
   background-color: #ffffff;
-  color: white;
   position: absolute;
   top: 0;
   z-index: 9999;
@@ -63,6 +70,9 @@ nav {
       color: #ffffff;
       padding: 12px 72px;
       background-color: #d4838f; }
+      nav li a.active {
+        background-color: #c04a5c;
+        cursor: default; }
       nav li a:hover {
         background-color: #c04a5c; }
 
@@ -138,11 +148,13 @@ textarea:focus {
 input[type='text'] {
   height: 48px;
   width: 100%;
-  padding: 0 24px 4px; }
+  padding: 0 24px 4px;
+  transition: box-shadow 0.3s ease; }
 
 textarea {
   width: 100%;
-  padding: 16px 24px 20px; }
+  padding: 16px 24px 20px;
+  transition: box-shadow 0.3s ease; }
 
 fieldset {
   border-radius: 8px;
@@ -204,7 +216,8 @@ footer {
   border-radius: 8px;
   height: 48px;
   width: 100%;
-  padding: 8px 24px 0 0; }
+  padding: 8px 24px 0 0;
+  transition: box-shadow 0.3s ease; }
 
 input[type='radio'] {
   margin: 8px 16px 0 24px; }
@@ -256,7 +269,8 @@ select {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  border-radius: 8px; }
+  border-radius: 8px;
+  transition: box-shadow 0.3s ease; }
 
 .control-select {
   position: relative;

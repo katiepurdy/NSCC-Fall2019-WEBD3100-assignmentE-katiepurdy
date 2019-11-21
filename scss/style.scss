@@ -9,6 +9,8 @@ $background-color-secondary: $white;
 $text-color-headings: $color-secondary;
 $border-radius: 8px;
 $box-shadow: 0 0 10px rgba(47, 46, 65, 0.2);
+$transition-background: background-color 0.3s ease;
+$transition-border: box-shadow 0.3s ease;
 
 * {
   box-sizing: border-box;
@@ -46,9 +48,19 @@ main {
 	max-width: 1600px;
 }
 
+a,
+input[type="submit"] {
+	transition: $transition-background;
+}
+
 header {
 	h1 > a {
 		text-decoration: none;
+		color: $color-secondary;
+		&:hover {
+			text-decoration: underline;
+			cursor: pointer;
+		}
 	}
 }
 
@@ -56,7 +68,6 @@ nav {
 	display: flex;
 	justify-content: center;
   background-color: $white;
-  color: white;
   position: absolute;
   top: 0;
   z-index: 9999;
@@ -86,6 +97,10 @@ nav {
 			color: $white;
 			padding: 12px 72px;
 			background-color: $color-primary;
+			&.active {
+				background-color: $color-primary-hover;
+				cursor: default;
+			}
 			&:hover {
 				background-color: $color-primary-hover;
 			}
@@ -174,12 +189,14 @@ textarea:focus {
 input[type='text'] {
   height: 48px;
   width: 100%;
-  padding: 0 24px 4px;
+	padding: 0 24px 4px;
+	transition: $transition-border;
 }
 
 textarea {
   width: 100%;
-  padding: 16px 24px 20px;
+	padding: 16px 24px 20px;
+	transition: $transition-border;
 }
 
 fieldset {
@@ -259,7 +276,8 @@ footer {
   border-radius: $border-radius;
   height: 48px;
   width: 100%;
-  padding: 8px 24px 0 0;
+	padding: 8px 24px 0 0;
+	transition: $transition-border;
 }
 
 input[type='radio'] {
@@ -317,7 +335,8 @@ select {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  border-radius: $border-radius;
+	border-radius: $border-radius;
+	transition: $transition-border;
 }
 
 .control-select {
