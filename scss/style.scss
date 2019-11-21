@@ -7,17 +7,22 @@ $white: #ffffff;
 $background-color-primary: $color-primary;
 $background-color-secondary: $white;
 $text-color-headings: $color-secondary;
-$border-radius: 8px;
-$box-shadow: 0 0 10px rgba(47, 46, 65, 0.2);
+$border-radius: 0.5rem;
+$box-shadow: 0 0 0.625rem rgba(47, 46, 65, 0.2);
 $transition-background: background-color 0.3s ease;
 $transition-border: box-shadow 0.3s ease;
+$small-breakpoint: 40rem;
+$medium-breakpoint: 48rem;
+$large-breakpoint: 62rem;
+$extra-large-breakpoint: 100rem;
+$extra-extra-large-breakpoint: 125rem;
 
 * {
   box-sizing: border-box;
 }
 
 html {
-  font-size: 100%;
+	font-size: 100%;
 }
 
 body {
@@ -31,21 +36,31 @@ body {
   background-color: $background-color-primary;
   background: url('../images/email-pattern-pink.png');
   background-repeat: repeat;
-  height: 100vh;
   margin: 0;
   position: relative;
 }
 
 main {
-	padding: 144px 96px 0;
+	padding-top: 9.5rem;
 	display: flex;
-	flex:1;
+	flex: 1;
 	flex-direction: column;
 	align-items: center;
+	@media only screen and (min-width: $medium-breakpoint) {
+		padding-top: 6rem;
+	}
+	@media only screen and (min-width: $extra-large-breakpoint) {
+		padding-top: 9rem;
+	}
 }
 
 .container {
-	max-width: 1600px;
+	@media only screen and (min-width: $medium-breakpoint) {
+		max-width: 92%;
+	}
+	@media only screen and (min-width: $extra-extra-large-breakpoint) {
+		max-width: 112rem;
+	}
 }
 
 a,
@@ -77,12 +92,24 @@ nav {
 	.container {
 		width: 100%;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+		align-items: center;
+		justify-items: center;
+		flex-direction: column;
+		@media only screen and (min-width: $medium-breakpoint) {
+			flex-direction: row;
+			justify-content: space-between;
+		}
 	}
   ul {
 		display: flex;
 		margin: 0;
+		flex-direction: column;
+		width: 100%;
+		padding: 0;
+		@media only screen and (min-width: $medium-breakpoint) {
+			flex-direction: row;
+			width: auto;
+		}
 	}
 	li {
 		list-style: none;
@@ -93,10 +120,14 @@ nav {
 		a {
 			display: inline-block;
 			text-decoration: none;
-			font-size: 20px;
+			font-size: 1.25rem;
 			color: $white;
-			padding: 12px 72px;
+			padding: 0.75rem 72px;
 			background-color: $color-primary;
+			@media only screen and (max-width: $medium-breakpoint) {
+				width: 100%;
+				text-align: center;
+			}
 			&.active {
 				background-color: $color-primary-hover;
 				cursor: default;
@@ -109,15 +140,25 @@ nav {
 }
 
 .container.contact {
+	flex-direction: column;
+	align-items: baseline;
+	padding: 3rem 1.5rem 1.5rem 1.5rem;
   width: 100%;
   display: flex;
-  flex-direction: row;
-  align-items: flex-end;
   background-color: $background-color-secondary;
-  padding: 56px 44px 44px 88px;
-  opacity: 1;
-	border-radius: $border-radius;
 	box-shadow: $box-shadow;
+	@media only screen and (min-width: $small-breakpoint) {
+		border-radius: $border-radius;
+		padding: 2.5rem 3rem 3rem 3rem;
+	}
+	@media only screen and (min-width: $large-breakpoint) and (max-width: $extra-extra-large-breakpoint) {
+		padding-bottom: 1.5rem;
+	}
+	@media only screen and (min-width: $extra-large-breakpoint) {
+		flex-direction: row;
+		align-items: flex-end;
+		padding: 3.5rem 2.75rem 2.75rem 5.5rem;
+	}
 }
 
 h1,
@@ -134,45 +175,64 @@ h6 {
 }
 
 h2 {
-  font-size: 56px;
-  margin-bottom: 24px;
-  line-height: 1;
+	text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+	line-height: 1;
+	@media only screen and (min-width: $small-breakpoint) {
+		font-size: 3rem;
+		text-align: left;
+	}
+	@media only screen and (min-width: $medium-breakpoint) {
+		font-size: 3.25rem;
+	}
+	@media only screen and (min-width: $extra-large-breakpoint) {
+		font-size: 3.5rem;
+	}
 }
 
 form {
-  flex-grow: 2;
-  min-width: 690px;
-  flex-wrap: wrap;
-  margin-right: 44px;
+  margin-right: 0;
+	flex-grow: 1;
+	width: 100%;
+	@media only screen and (min-width: $extra-large-breakpoint) {
+		flex-grow: 2;
+		min-width: 690px;
+		margin-right: 2.75rem;
+		width: 100%;
+	}
 }
 
 fieldset {
   border: 1px solid rgba(47, 46, 65, 0.2);
-  padding: 24px;
+  padding: 1.5rem;
 }
 
 legend {
   padding: 0 10px;
-  font-size: 20px;
+  font-size: 1.25rem;
   font-weight: 700;
   color: rgba(47, 46, 65, 0.85);
 }
 
 label {
-  font-size: 20px;
+  font-size: 1.25rem;
   display: block;
-  margin-bottom: 8px;
+  margin-bottom: 0.5rem;
 }
 
 input,
 textarea {
-  font-size: 20px;
+  font-size: 1.25rem;
   margin: 0;
   border: none;
   outline: none;
   border-radius: $border-radius;
   background-color: $color-tertiary;
-  color: rgba(47, 46, 65, 0.75);
+	color: rgba(47, 46, 65, 0.75);
+	@media only screen and (max-width: $medium-breakpoint) {
+		font-size: 1.2rem;
+	}
 }
 
 .control-radio:focus,
@@ -187,25 +247,31 @@ textarea:focus {
 }
 
 input[type='text'] {
-  height: 48px;
+  height: 3rem;
   width: 100%;
-	padding: 0 24px 4px;
+	padding: 0 1.5rem 4px;
 	transition: $transition-border;
 }
 
 textarea {
   width: 100%;
-	padding: 16px 24px 20px;
+	padding: 1rem 1.5rem 1.25rem;
 	transition: $transition-border;
+	@media only screen and (max-width: $medium-breakpoint) {
+		height: 20rem;
+	}
 }
 
 fieldset {
   border-radius: $border-radius;
-  padding-top: 8px;
+  padding-top: 0.5rem;
 }
 
 fieldset:not(:last-of-type) {
-  margin-bottom: 16px;
+	margin-bottom: 1rem;
+	@media only screen and (max-width: $medium-breakpoint) {
+		margin: 3rem 0;
+	}
 }
 
 footer {
@@ -216,20 +282,30 @@ footer {
 		display: flex;
 		justify-content: center;
 	}
-	height: 72px;
+	height: 4.5rem;
 	width: 100%;
 	color: $white;
 }
 
 .personal-info {
   display: grid;
-  column-gap: 24px;
-  row-gap: 16px;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(2, 1fr);
-  grid-template-areas:
-    'firstName lastName'
-    'phone email';
+  column-gap: 1.5rem;
+  row-gap: 1rem;
+  grid-template-columns: 1fr;
+	grid-template-rows: repeat(4, auto);
+	grid-template-areas:
+	'firstName'
+	'lastName'
+	'phone'
+	'email';
+	@media only screen and (min-width: $large-breakpoint) {
+		grid-template-columns: repeat(2, 1fr);
+		grid-template-rows: repeat(2, 1fr);
+		grid-template-areas:
+			'firstName lastName'
+			'phone email';
+	}
+	
 }
 
 .field-1 {
@@ -250,12 +326,20 @@ footer {
 
 .project-info {
   display: grid;
-  grid-gap: 16px;
+  grid-gap: 1rem;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(2, auto);
   grid-template-areas:
     'primaryLanguage services'
-    'details details';
+		'details details';
+	@media only screen and (max-width: $medium-breakpoint) {
+		grid-template-columns: 1fr;
+		grid-template-rows: repeat(3, auto);
+		grid-template-areas:
+			'primaryLanguage'
+			'services'
+			'details';
+	}
 }
 
 .field-5 {
@@ -274,22 +358,22 @@ footer {
   display: flex;
   background-color: $color-tertiary;
   border-radius: $border-radius;
-  height: 48px;
+  height: 3rem;
   width: 100%;
-	padding: 8px 24px 0 0;
+	padding: 0.5rem 1.5rem 0 0;
 	transition: $transition-border;
 }
 
 input[type='radio'] {
-  margin: 8px 16px 0 24px;
+  margin: 0.5rem 1rem 0 1.5rem;
 }
 
 input[type='radio']:after {
-  width: 20px;
-  height: 20px;
-  border-radius: 20px;
-  top: -2px;
-  left: -2px;
+  width: 1.25rem;
+  height: 1.25rem;
+  border-radius: 1.25rem;
+  top: -0.125rem;
+  left: -0.125rem;
   position: relative;
   background-color: $color-primary;
   content: '';
@@ -301,23 +385,35 @@ input[type='radio']:after {
 
 input[type='radio']:checked:after {
   content: '';
-  border-radius: 20px;
+  border-radius: 1.25rem;
   background-color: $white;
   visibility: visible;
-  border: 5px solid $color-primary;
+  border: 0.3125rem solid $color-primary;
 }
 
 input[type='submit'] {
   background-color: $color-primary;
-  font-size: 20px;
+  font-size: 1.25rem;
   font-weight: 700;
   border: none;
   color: white;
-  padding: 8px 64px 12px 64px;
+  padding: 0.5rem 4rem 0.75rem 4rem;
   text-decoration: none;
-  margin: 36px 0 0 0;
   cursor: pointer;
-  border-radius: $border-radius;
+	border-radius: $border-radius;
+	width: 100%;
+	margin: 1.5rem 0;
+	@media only screen and (min-width: $small-breakpoint) {
+		margin: 3rem 0;
+	}
+	@media only screen and (min-width: $medium-breakpoint) {
+		width: auto;
+		margin: 2.25rem 0 0 0;
+		padding: 0.5rem 10rem 0.75rem 10rem;
+	}
+	@media only screen and (min-width: $extra-large-breakpoint) {
+		padding: 0.5rem 4rem 0.75rem 4rem;
+	}
 }
 
 input[type='submit']:hover {
@@ -326,12 +422,12 @@ input[type='submit']:hover {
 
 select {
   background-color: $color-tertiary;
-  height: 48px;
-  line-height: 40px;
-  padding: 0 24px 3px 24px;
+  height: 3rem;
+  line-height: 3rem;
+  padding: 0 1.5rem 0.1875rem 1.5rem;
   border: 0;
   width: 100%;
-  font-size: 20px;
+  font-size: 1.25rem;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -348,13 +444,28 @@ select {
 .select-icon {
   color: $color-secondary;
   position: absolute;
-  right: 24px;
-  top: 16px;
+  right: 1.5rem;
+  top: 1rem;
   z-index: 99;
 }
 
 .undraw-girl {
-  flex-grow: 1;
-  margin-bottom: 80px;
-  width: 400px;
+	width: 100%;
+	margin-bottom: 0;
+	@media only screen and (min-width: $small-breakpoint) {
+		margin-bottom: 0;
+	}
+	@media only screen and (min-width: $medium-breakpoint) {
+		margin-top: 3rem;
+	}
+	@media only screen and (min-width: $large-breakpoint) {
+		flex-grow: 1;
+		align-self: flex-end;
+		margin-bottom: 1.5rem;
+		width: 40%;
+	}
+	@media only screen and (min-width: $extra-large-breakpoint) {
+		margin-bottom: 5rem;
+		width: 25rem;
+	}
 }
