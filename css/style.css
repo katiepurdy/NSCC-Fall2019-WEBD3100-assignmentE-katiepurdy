@@ -1,101 +1,278 @@
 * {
   box-sizing: border-box; }
 
+html {
+  font-size: 100%; }
+
 body {
-  font-family: acumin-pro,sans-serif;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  line-height: 1.5;
+  font-family: 'acumin-pro', sans-serif;
   font-weight: 400;
   font-style: normal;
-  padding: 96px 96px 0;
-  background-color: #D4838F;
-  background-repeat: no-repeat;
-  background-size: cover;
+  background-color: #d4838f;
+  background: url("../images/email-pattern-pink.png");
+  background-repeat: repeat;
   height: 100vh;
-  margin: 0; }
+  margin: 0;
+  position: relative; }
 
-h1, h2, h3, h4, h5, h6 {
-  color: #2F2E41;
-  letter-spacing: 1px;
+main {
+  padding: 144px 96px 0;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center; }
+
+.container {
+  max-width: 1600px; }
+
+header h1 > a {
+  text-decoration: none; }
+
+nav {
+  display: flex;
+  justify-content: center;
+  background-color: #ffffff;
+  color: white;
+  position: absolute;
+  top: 0;
+  z-index: 9999;
+  left: 0;
+  width: 100%;
+  box-shadow: 0 0 10px rgba(47, 46, 65, 0.2); }
+  nav .container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; }
+  nav ul {
+    display: flex;
+    margin: 0; }
+  nav li {
+    list-style: none;
+    margin: 0; }
+    nav li:not(:first-child) {
+      border-left: 1px solid #B9727C; }
+    nav li a {
+      display: inline-block;
+      text-decoration: none;
+      font-size: 20px;
+      color: #ffffff;
+      padding: 12px 72px;
+      background-color: #d4838f; }
+      nav li a:hover {
+        background-color: #c04a5c; }
+
+.container.contact {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  background-color: #ffffff;
+  padding: 56px 44px 44px 88px;
+  opacity: 1;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(47, 46, 65, 0.2); }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #2f2e41;
+  letter-spacing: -1px;
   font-weight: 700;
   font-style: normal;
   margin: 0; }
 
-h1 {
+h2 {
   font-size: 56px;
-  margin-bottom: 22px; }
+  margin-bottom: 24px;
+  line-height: 1; }
 
 form {
-  flex: 0;
+  flex-grow: 2;
   min-width: 690px;
-  flex-wrap: wrap; }
+  flex-wrap: wrap;
+  margin-right: 44px; }
 
 fieldset {
   border: 1px solid rgba(47, 46, 65, 0.2);
-  padding: 8px 20px; }
+  padding: 24px; }
 
 legend {
-  padding: 2px 6px;
+  padding: 0 10px;
   font-size: 20px;
   font-weight: 700;
   color: rgba(47, 46, 65, 0.85); }
 
 label {
-  font-size: 20px; }
+  font-size: 20px;
+  display: block;
+  margin-bottom: 8px; }
 
 input,
 textarea {
-  padding: 8px 16px;
   font-size: 20px;
-  margin: 16px 0;
+  margin: 0;
   border: none;
   outline: none;
   border-radius: 8px;
-  background-color: #F2F2F2;
+  background-color: #f2f2f2;
   color: rgba(47, 46, 65, 0.75); }
 
-input,
-input:not(input[type=radio]),
-textarea {
-  width: 100%; }
-
-input[type=text]:focus,
+.control-radio:focus,
+select:active,
+select:focus,
+input[type='text']:active,
+input[type='text']:focus,
+textarea:active,
 textarea:focus {
-  box-shadow: 0 0 0 2px #D4838F; }
+  outline: 0;
+  box-shadow: 0 0 0 3px #d4838f; }
+
+input[type='text'] {
+  height: 48px;
+  width: 100%;
+  padding: 0 24px 4px; }
+
+textarea {
+  width: 100%;
+  padding: 16px 24px 20px; }
 
 fieldset {
-  border-radius: 8px; }
+  border-radius: 8px;
+  padding-top: 8px; }
+
+fieldset:not(:last-of-type) {
+  margin-bottom: 16px; }
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 72px;
+  width: 100%;
+  color: #ffffff; }
+  footer .container {
+    display: flex;
+    justify-content: center; }
+
+.personal-info {
+  display: grid;
+  column-gap: 24px;
+  row-gap: 16px;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-areas: 'firstName lastName' 'phone email'; }
+
+.field-1 {
+  grid-area: firstName; }
+
+.field-2 {
+  grid-area: lastName; }
+
+.field-3 {
+  grid-area: phone; }
+
+.field-4 {
+  grid-area: email; }
+
+.project-info {
+  display: grid;
+  grid-gap: 16px;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, auto);
+  grid-template-areas: 'primaryLanguage services' 'details details'; }
+
+.field-5 {
+  grid-area: primaryLanguage; }
+
+.field-6 {
+  grid-area: services; }
+
+.field-7 {
+  grid-area: details; }
 
 .control-radio {
-  background-color: #F2F2F2;
-  border-radius: 8px; }
-
-input[type=radio] {
-  margin-left: 4px; }
-
-.container.contact {
   display: flex;
-  flex-direction: row;
-  align-items: flex-end;
-  background-color: #ffffff;
-  padding: 44px 88px;
-  opacity: 1;
-  border-radius: 8px; }
+  background-color: #f2f2f2;
+  border-radius: 8px;
+  height: 48px;
+  width: 100%;
+  padding: 8px 24px 0 0; }
 
-input[type=submit] {
-  background-color: #D4838F;
+input[type='radio'] {
+  margin: 8px 16px 0 24px; }
+
+input[type='radio']:after {
+  width: 20px;
+  height: 20px;
+  border-radius: 20px;
+  top: -2px;
+  left: -2px;
+  position: relative;
+  background-color: #d4838f;
+  content: '';
+  display: inline-block;
+  visibility: visible;
+  border: 0;
+  box-sizing: border-box; }
+
+input[type='radio']:checked:after {
+  content: '';
+  border-radius: 20px;
+  background-color: #ffffff;
+  visibility: visible;
+  border: 5px solid #d4838f; }
+
+input[type='submit'] {
+  background-color: #d4838f;
   font-size: 20px;
   font-weight: 700;
   border: none;
   color: white;
-  padding: 8px 64px;
+  padding: 8px 64px 12px 64px;
   text-decoration: none;
-  margin: 4px 2px;
+  margin: 36px 0 0 0;
   cursor: pointer;
-  border-radius: 8px;
-  margin-bottom: 0; }
+  border-radius: 8px; }
+
+input[type='submit']:hover {
+  background-color: #c04a5c; }
+
+select {
+  background-color: #f2f2f2;
+  height: 48px;
+  line-height: 40px;
+  padding: 0 24px 3px 24px;
+  border: 0;
+  width: 100%;
+  font-size: 20px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border-radius: 8px; }
+
+.control-select {
+  position: relative;
+  background-color: #f2f2f2;
+  border-radius: 8px; }
+
+.select-icon {
+  color: #2f2e41;
+  position: absolute;
+  right: 24px;
+  top: 16px;
+  z-index: 99; }
 
 .undraw-girl {
-  width: 400px;
-  height: 100%;
-  display: inline-block; }
+  flex-grow: 1;
+  margin-bottom: 80px;
+  width: 400px; }
 
 /*# sourceMappingURL=style.css.map */

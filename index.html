@@ -5,70 +5,86 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Contact</title>
+    <script src="https://kit.fontawesome.com/65fddbe2ff.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/normalize.css" />
     <link rel="stylesheet" href="https://use.typekit.net/rlb8vrq.css">
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
+    <header>
+      <nav>
+        <div class="container">
+          <h1><a href="#"></a>katiepurdy.me</a></h1>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="/contact-demo">Contact</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
     <main>
       <section class="container contact">
         <form action="/" autocomplete="on">
-          <h1>Let's collaborate!</h1>
+          <h2>Let's collaborate!</h2>
           <fieldset>
             <legend>Personal info</legend>
-            <div class="field">
-                <label for="firstName">What is your first name?*</label><br>
+            <div class="personal-info">
+              <div class="field field-1">
+                  <label for="firstName">What is your first name? *</label>
+                  <div class="control">
+                    <input type="text" id="firstName" name="firstName" placeholder="e.g. Jane" autocomplete="given-name">
+                  </div>
+              </div>
+              <div class="field field-2">
+                <label for="lastName">What is your last name?</label>
                 <div class="control">
-                  <input type="text" id="firstName" name="firstName" placeholder="e.g. Jane" autocomplete="given-name">
+                  <input type="text" id="lastName" name="lastName" placeholder="e.g. Doe" autocomplete="family-name">
                 </div>
-            </div>
-            <div class="field">
-              <label for="lastName">What is your last name?</label><br>
-              <div class="control">
-                <input type="text" id="lastName" name="lastName" placeholder="e.g. Doe" autocomplete="family-name">
               </div>
-            </div>
-            <div class="field">
-              <label for="phoneNumber">What is your phone number?</label><br>
-              <div class="control">
-                <input type="text" id="phoneNumber" name="phoneNumber" placeholder="e.g. 999-999-0000" autocomplete="tel-national">
+              <div class="field field-3">
+                <label for="phoneNumber">What is your phone number?</label>
+                <div class="control">
+                  <input type="text" id="phoneNumber" name="phoneNumber" placeholder="e.g. 999-999-0000" autocomplete="tel-national">
+                </div>
               </div>
-            </div>
-            <div class="field">
-              <label for="email">What is your email address?*</label><br>
-              <div class="control">
-                <input type="text" id="email" name="email" placeholder="e.g. jane.doe@example.com" autocomplete="email">
+              <div class="field field-4">
+                <label for="email">What is your email address? *</label>
+                <div class="control">
+                  <input type="text" id="email" name="email" placeholder="e.g. jane.doe@example.com" autocomplete="email">
+                </div>
               </div>
-              
             </div>
           </fieldset>
               
           <fieldset>
             <legend>Project info</legend>
-            <div class="field">
-              <label>Primary language*</label>
-              <div class="control-radio">
-                <input type="radio" id="javascript" name="primaryLanguage">
-                <label for="javascript">JavaScript</label>
-                <input type="radio" id="other" name="primaryLanguage">
-                <label for="other">Other</label>
+            <div class="project-info">
+              <div class="field field-5">
+                <label>Primary language *</label>
+                <div class="control-radio" tabindex="0">
+                  <input type="radio" id="javascript" name="primaryLanguage">
+                  <label for="javascript">JavaScript</label>
+                  <input type="radio" id="other" name="primaryLanguage">
+                  <label for="other">Other</label>
+                </div>
               </div>
-            </div>
-            <div class="field">
-              <label for="services">Which services do you need?</label>
-              <div class="control">
-                <select name="services" id="services">
-                  <option value="design">Design</option>
-                  <option value="development">Development</option>
-                  <option value="design-and-development" selected>Design & Development</option>
-                  <option value="other">Other</option>
-                </select>
+              <div class="field field-6">
+                <label for="services">Which services do you need?</label>
+                <div class="control control-select">
+                  <select name="services" id="services">
+                    <option value="design">Design</option>
+                    <option value="development">Development</option>
+                    <option value="design-and-development" selected>Design & Development</option>
+                    <option value="other">Other</option>
+                  </select>
+                  <i class="fas fa-chevron-circle-down select-icon"></i>
+                </div>
               </div>
-            </div>
-            <div class="field">
-              <label for="details">What is your project all about?</label><br>
-              <div class="control">
-                <textarea name="details" id="details" placeholder="e.g. Hi! I'm looking for..."></textarea>
+              <div class="field field-7">
+                <label for="details">What is your project all about?</label>
+                <div class="control">
+                  <textarea name="details" id="details" placeholder="e.g. Hi! I'm looking for..."></textarea>
+                </div>
               </div>
             </div>
           </fieldset>
@@ -77,7 +93,11 @@
         </form>
         <img src="images/undraw-girl.png" class="undraw-girl" alt="">
       </section>
-
     </main>
+    <footer>
+      <div class="container">
+        <p><small>WEBD3100 - Assignment E - Katie Purdy</small></p>
+      </div>
+    </footer>
   </body>
 </html>
